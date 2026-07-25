@@ -367,6 +367,7 @@
             border-radius: 10px;
             z-index: 6;
         }
+        
 
         .calendar {
             width: 100%;
@@ -425,6 +426,49 @@
         .cal-day.today {
             background: #e3cad4;
             color: #fff;
+        }
+        
+        #buttoncontain {
+            margin-top: 15px;
+            border-width: 7px;
+            border-style: solid;
+            border-image: url("https://rainingroses.neocities.org/images/bordering.png") 7 fill round;
+            height: auto;
+            filter: drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795);
+            border-radius: 10px;
+            z-index: 6;
+        }
+        
+        .button-widget {
+            box-sizing: border-box;
+            background-image: url("https://i.pinimg.com/736x/ad/95/15/ad951520b6ae94b56cae1e265b59327c.jpg");
+            background-size: 200px;
+            border: 1.3px dashed #a1878f;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        .button-widget img {
+            image-rendering: pixelated;
+            margin-bottom: 6px;
+        }
+        
+        .button-code {
+            width: 100%;
+            height: 55px;
+            resize: none;
+            box-sizing: border-box;
+            font-family: 'pixelatedelegance';
+            font-size: 7px;
+            letter-spacing: 0.3px;
+            line-height: 1.4;
+            color: #8d7c76;
+            background-color: #fffdfe;
+            border: 1.3px dashed #a1878f;
+            border-radius: 4px;
+            padding: 5px;
+            cursor: inherit;
         }
 
         /* ===== WRAPPER ===== */
@@ -628,8 +672,10 @@
         /* ===== CONTENT SIDE ===== */
         .content-area {
             flex: 1;
+            min-width: 0;
             padding: 10px;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         /* ===== SCROLL BOX ===== */
@@ -664,6 +710,31 @@
         .small-boxes {
             display: flex;
             gap: 8px;
+        }
+
+        /* ===== WINDOW COLUMN (window box + mini images stacked beneath it) ===== */
+        .window-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        /* ===== MINI IMAGES ROW (sits under the window box) ===== */
+        .mini-images-row {
+            display: flex;
+            gap: 8px;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mini-images-row img {
+            flex: none;
+            height: auto;
+            width: auto;
+            object-fit: contain;
         }
 
         /* ===== WINDOW BOX ===== */
@@ -714,6 +785,40 @@
         .small-box,
         .window-scroll {
             font-family: 'pixelatedelegance';
+        }
+
+        /* ===== STAMPS MARQUEE ===== */
+        .stamps-marquee-contain {
+            margin-top: 8px;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+            background-color: #fffdfe;
+            box-sizing: border-box;
+        }
+
+        .stamps-marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            animation: stamps-scroll 30s linear infinite;
+        }
+
+        .stamps-marquee-contain:hover .stamps-marquee-track {
+            animation-play-state: paused;
+        }
+
+        .stamps-marquee-track img {
+            height: 34px;
+            width: auto;
+            margin: 4px 6px;
+            image-rendering: pixelated;
+            flex-shrink: 0;
+        }
+
+        @keyframes stamps-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         /* ===== ASCII CORNER DECORATIONS ===== */
@@ -786,8 +891,8 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠚⠹⡉⢃⣴⠟⠉⠀⠀⠀⠀⠉⠻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⢡⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡂⣿⡇⠀⠀⠀⠀⣠⣤⣀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢻⣷⠀⠀⠀⠀⢯⡉⣿⡆⠀⠀⣰⡇⠀⢀⣀⢤⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣧⣀⠀⠀⢀⣴⡟⠀⠀⣰⣿⡷⢏⡭⠔⠹⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⠀⠀⠀⠀⢯⡉⣿⡆⠀⠀⣰⡇⠀⢀⣀⢤⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣧⣀⠀⠀⢀⣴⡟⠀⠀⣰⣿⡷⢏⡭⠔⠹⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⠿⠟⠋⠀⢀⣼⣿⣿⣿⠿⣭⡉⢛⡃⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⣀⣤⠶⠿⣟⣟⣝⡷⣲⢤⣀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⣠⣾⡿⠃⠹⡟⢖⠢⠽⠦⠁⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⢀⣴⠞⠁⠀⠀⠀⠀⠀⠉⠙⢦⣕⡯⣷⣄⠀⠀⠠⣴⠋⢓⡶⠂⠀⢀⣼⣿⠟⠁⠀⠀⠈⠺⡄⠋⣀⣰⣀⠀⠀⠀⠀⠀⠀
@@ -825,8 +930,8 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠚⠹⡉⢃⣴⠟⠉⠀⠀⠀⠀⠉⠻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⢡⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡂⣿⡇⠀⠀⠀⠀⣠⣤⣀⠀⠀⠀⠘⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⢻⣷⠀⠀⠀⠀⢯⡉⣿⡆⠀⠀⣰⡇⠀⢀⣀⢤⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣧⣀⠀⠀⢀⣴⡟⠀⠀⣰⣿⡷⢏⡭⠔⠹⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⠀⠀⠀⠀⢯⡉⣿⡆⠀⠀⣰⡇⠀⢀⣀⢤⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣧⣀⠀⠀⢀⣴⡟⠀⠀⣰⣿⡷⢏⡭⠔⠹⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⠿⠟⠋⠀⢀⣼⣿⣿⣿⠿⣭⡉⢛⡃⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⣀⣤⠶⠿⣟⣟⣝⡷⣲⢤⣀⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⣠⣾⡿⠃⠹⡟⢖⠢⠽⠦⠁⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⢀⣴⠞⠁⠀⠀⠀⠀⠀⠉⠙⢦⣕⡯⣷⣄⠀⠀⠠⣴⠋⢓⡶⠂⠀⢀⣼⣿⠟⠁⠀⠀⠈⠺⡄⠋⣀⣰⣀⠀⠀⠀⠀⠀⠀
@@ -917,6 +1022,13 @@
                         <div class="cal-days" id="calDays"></div>
                     </div>
                 </div>
+                
+                <div id="buttoncontain">
+                    <div class="button-widget">
+                        <img src="https://rainingroses.neocities.org/images/rainingrosesbutton.gif" width="88" height="31" alt="raining roses button">
+                        <textarea class="button-code" readonly onclick="this.select()">&lt;a href="https://rainingroses.neocities.org" target="_blank"&gt;&lt;img src="https://rainingroses.neocities.org/images/rainingrosesbutton.gif" width="88" height="31" alt="raining roses"&gt;&lt;/a&gt;</textarea>
+                    </div>
+                </div>
 
                 <script>
                     generateCalendar();
@@ -951,28 +1063,73 @@
                                 </div>
                               </div>
                         </div>
-                        <div class="window-box">
-                            <div class="window-scroll">
-                                <p>
-                                    This text scrolls behind the window. meow meow meow 
+                        <div class="window-column">
+                            <div class="window-box">
+                                <div class="window-scroll">
+                                    <p>
+                                        This text scrolls behind the window. meow meow meow 
+                                    </p>
+                                    <p style="padding:0px;margin:0px;font-size:9px;color:#6e6469;text-align:center;">
+                                  <br>    
+                                    <strong>2026年7月24日</strong> started <br> working on this site!
+                                    <br><br>	
                                 </p>
-                                <p style="padding:0px;margin:0px;font-size:9px;color:#6e6469;text-align:center;">
-                              <br>    
-                                <strong>2026年7月24日</strong> started <br> working on this site!
-                                <br><br>	
-                            </p>
+                                </div>
+
+                                <img src="https://files.catbox.moe/cso1wz.png" class="window-frame" alt="window frame">
                             </div>
 
-                            <img src="https://files.catbox.moe/cso1wz.png" class="window-frame" alt="window frame">
+                            <div class="mini-images-row">
+                                <img src="https://i.ibb.co/QcCNDtZ/tiny-222.png" alt="tiny">
+                                <img src="https://www.lejlart.com/mypixel/bunnypixel7.png" alt="bunny">
+                                <img src="https://mewchara.neocities.org/clique/doll/dollwhite.png">
+                            </div>
                         </div>
 
                     </div>
                 </div>
+
+                <!-- ===== STAMPS MARQUEE ===== -->
+                <div class="stamps-marquee-contain">
+                    <div class="stamps-marquee-track" id="stampsTrack">
+                        <!-- images injected by script below, duplicated for seamless loop -->
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
     </div>
+
+<script>
+    (function () {
+        var stampUrls = [
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a5869703-2cd4-4266-9555-1d3ab45dd5bb/dat84eo-b1a2f605-0f2c-410a-991c-7b38f50c2125.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9hNTg2OTcwMy0yY2Q0LTQyNjYtOTU1NS0xZDNhYjQ1ZGQ1YmIvZGF0ODRlby1iMWEyZjYwNS0wZjJjLTQxMGEtOTkxYy03YjM4ZjUwYzIxMjUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.C5dPoHLyQkmta__EOwqn-XP2BDF3BZEn62Jl4FjZ460",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c6304fc-d7b4-41cd-aa4f-2df9a5fab6d3/dj087h5-f606833d-83ca-4f80-8cf4-af87085a284b.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi80YzYzMDRmYy1kN2I0LTQxY2QtYWE0Zi0yZGY5YTVmYWI2ZDMvZGowODdoNS1mNjA2ODMzZC04M2NhLTRmODAtOGNmNC1hZjg3MDg1YTI4NGIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZTn2FNHSJRICJWoY7kXzEHEnQIneBC3pShOkDqlrEMk",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/69efc36e-ca71-4215-babc-8e38404479ff/d1sxonz-9cfdc9bb-8f30-4cab-9aaa-c9964839bf90.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi82OWVmYzM2ZS1jYTcxLTQyMTUtYmFiYy04ZTM4NDA0NDc5ZmYvZDFzeG9uei05Y2ZkYzliYi04ZjMwLTRjYWItOWFhYS1jOTk2NDgzOWJmOTAucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.SVpzUhzfJ71az94JxOwX7R1oD6tzwBIoLG6-OfOvETY",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e32bb970-36ac-43e5-8977-0b9d5a290053/dctyxj2-3479d1ed-2250-4ae0-a8c0-cd59f566fa0f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9lMzJiYjk3MC0zNmFjLTQzZTUtODk3Ny0wYjlkNWEyOTAwNTMvZGN0eXhqMi0zNDc5ZDFlZC0yMjUwLTRhZTAtYThjMC1jZDU5ZjU2NmZhMGYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.DW-zZNMNf4Qmk3v5QKhew_E2rKBR2XLP0Y0Uv7UI--k",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/bdebcd1e-c64d-43db-bd09-4b2218be9a99/dkzimtj-9710b70d-bf78-454b-9674-7666792504d3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9iZGViY2QxZS1jNjRkLTQzZGItYmQwOS00YjIyMThiZTlhOTkvZGt6aW10ai05NzEwYjcwZC1iZjc4LTQ1NGItOTY3NC03NjY2NzkyNTA0ZDMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RV1ZR0gBolsTv4TGy2UNV2kfkoDDEVgEMzu1a4t98pY",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c5bd3256-c7ea-40d7-bf51-0a5188940571/dhq68i6-44448408-e481-4b72-ba46-997242c6f915.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi9jNWJkMzI1Ni1jN2VhLTQwZDctYmY1MS0wYTUxODg5NDA1NzEvZGhxNjhpNi00NDQ0ODQwOC1lNDgxLTRiNzItYmE0Ni05OTcyNDJjNmY5MTUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Y_I_vxIDmrGi6DTUuiDLW2TWNJxaenDvyWvpBYxX-X8",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2e7f3a82-7cb6-408b-ad96-18dc0a21e6a2/d6l4goh-6f49ba31-3d38-4f30-8f74-c17a4e4a5d3f.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8yZTdmM2E4Mi03Y2I2LTQwOGItYWQ5Ni0xOGRjMGEyMWU2YTIvZDZsNGdvaC02ZjQ5YmEzMS0zZDM4LTRmMzAtOGY3NC1jMTdhNGU0YTVkM2YuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.RZEe1eQv6Ux_657YMAkmCZp0P2yJEAv6RGYhulOSq_o",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0770f9ec-ed13-4241-a92d-b57b1228495c/d5mwpfc-ba055dd6-d621-4304-a749-2f02011ce403.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8wNzcwZjllYy1lZDEzLTQyNDEtYTkyZC1iNTdiMTIyODQ5NWMvZDVtd3BmYy1iYTA1NWRkNi1kNjIxLTQzMDQtYTc0OS0yZjAyMDExY2U0MDMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._02u0Hvh7VZ8xlB2b791inNs0uwTuwEsliFTGXw-hXk",
+            "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4923ced0-c771-4cff-abde-687eb818ef65/dcwpo1c-6357aedc-79c7-4839-8680-4d1a511ba624.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi80OTIzY2VkMC1jNzcxLTRjZmYtYWJkZS02ODdlYjgxOGVmNjUvZGN3cG8xYy02MzU3YWVkYy03OWM3LTQ4MzktODY4MC00ZDFhNTExYmE2MjQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.XdAoaBbMXARzpQH-BN1tVqU9_P4QPVAQOWxPRKduWiY"
+        ];
+
+        var track = document.getElementById("stampsTrack");
+        if (!track) return;
+
+        // build the strip twice in a row so the -50% translateX loop is seamless
+        for (var rep = 0; rep < 2; rep++) {
+            stampUrls.forEach(function (url) {
+                var img = document.createElement("img");
+                img.src = url;
+                img.alt = "stamp";
+                track.appendChild(img);
+            });
+        }
+    })();
+</script>
 
 <script src="https://rainingroses.neocities.org/cursor.js"></script>
 
