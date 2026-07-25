@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'pixelatedelegance';
+  src: url("https://files.catbox.moe/xmx4nj.ttf");
+}
+
+@font-face {
+  font-family: 'littlespirit';
+  src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
+}
+
+@font-face {
+  font-family: 'romanceA';
+  src: url("https://rainingroses.neocities.org/fonts/RomanceA.ttf");
+}
 :root {
   --main-fg-color: #f7e9f0;
   --main-fg-color-light: #fdf2f8;
