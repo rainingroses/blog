@@ -1,603 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-<meta charset="UTF-8">
-<title>f2u layout</title>
-
-<style>
-
-/* ===== directory fonts ===== */
-@font-face {
-    font-family: "Basiic";
-    src: url("fonts/basiic.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: 'littlespirit';
-    src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
-}
-
-@font-face {
-    font-family: 'romanceA';
-    src: url("https://rainingroses.neocities.org/fonts/RomanceA.ttf");
-}
-
-
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-  background: transparent;
-}
-
-
-
-::selection {
-  background-color: #fdf2f8;
-  color: #8d7c76;
-}
-
-::-moz-selection {
-  background-color: #fdf2f8;
-  color: #8d7c76;
-}
-.mali-semibold-italic {
-  font-family: "Mali", cursive;
-  font-weight: 600;
-  font-style: italic;
-}
-body {
-    margin: 0;
-    padding: 40px 0;
-    background-image: url("https://rainingroses.neocities.org/images/bg2.png");
-    font-family: "Mali", "MS UI Gothic", Arial, sans-serif;
-    font-size: 14px;
-}
-
-a, button, input, textarea, select, label, [onclick] {
-    cursor: inherit;
-}
-/* ===== NAV CALENDAR BOX ===== */
-.calendar {
-    margin-top: 15px;
-        border: #e0bfcc 3.5px ridge;
-    border-radius: 10px;
-    background: #e3cad4;
-    padding: 4px;
-    font-size: 11px;
-    box-sizing: border-box;
-}
-
-/* ===== WEBESTOOLS CALENDAR OVERRIDES ===== */
-.cal_calendar {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* IMPORTANT */
-}
-
-.cal_calendar th,
-.cal_calendar td {
-       border: #e0bfcc 3.5px ridge;
-    border-radius: 10px;
-    text-align: center;
-    padding: 2px;
-    font-size: 10px;
-}
-
-.cal_calendar th {
-    background: #dcdcdc;
-    font-weight: bold;
-}
-
-.cal_calendar td {
-    height: 18px;
-}
-
-.cal_today {
-    background: #e3cad4;
-    color: #6e6469;
-    font-weight: bold;
-}
-
-.cal_days_bef_aft {
-    background: #e3cad4;
-    color: #6e6469;
-}
-
-/* ===== WRAPPER ===== */
-.wrapper {
-    width: 900px;
-    margin: 0 auto;
-    background: #ffffff;
- border: 32px solid;
-  border-image: url('https://files.catbox.moe/9djkei.png') 22 repeat;
-  border-radius: 30px;
-}
-
-.top-lace {
-    width: 100%;
-    height: 100%;
-    background-image: url("https://rainingroses.neocities.org/images/crosslace.png");
-    background-repeat: repeat-x;
-    background-position: top center;
-    background-size: auto 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    pointer-events: none;
-    filter: grayscale(66%) sepia(6%) brightness(127%) saturate(88%) contrast(100%);
-}
-
-/* ===== HEADER ===== */
-.header {
-    position: relative;
-    height: 130px;
-    background-image: url("https://rainingroses.neocities.org/images/laceheader1.png");
-    background-size: contain;
-    border-bottom: 1px solid #40353a;
-}
-
-.header-text {
-      font-family: "romanceA";
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    color:white;
-        text-shadow: 2px 2px 0 #6e6469, 2px -2px 0 #6e6469, -2px 2px 0 #6e6469, -2px -2px 0 #6e6469, 2px 0px 0 #6e6469, 0px 2px 0 #6e6469, -2px 0px 0 #6e6469, 0px -2px 0 #6e6469;
-    padding: 6px 10px;
-    font-size: 60px;
-}
-
-.header-side-img {
-    position: absolute;
-    right: -9%;
-    top: 0;
-    height: 130%;
-    width: auto;
-    transform: scaleX(-1);
-    z-index: 2;
-    pointer-events: none;
-}
-
-h2{
-   font-family: "romanceA";
-     color:white;
-        text-shadow: 2px 2px 0 #6e6469, 2px -2px 0 #6e6469, -2px 2px 0 #6e6469, -2px -2px 0 #6e6469, 2px 0px 0 #6e6469, 0px 2px 0 #6e6469, -2px 0px 0 #6e6469, 0px -2px 0 #6e6469;
-}
-
-/* ===== MAIN AREA ===== */
-.main {
-    display: flex;
-}
-
-/* ===== NAV ===== */
-.nav {
-    width: 190px;
-    border-right: 1px dotted #40353a;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-/* ===== ldirectory box, ported exactly ===== */
-#navcontain {
-    border-width: 7px;
-    border-style: solid;
-    border-image: url("https://rainingroses.neocities.org/images/bordering.png") 7 fill round;
-    height: auto;
-    filter: drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795);
-    border-radius: 10px;
-    z-index: 6;
-}
-
-.dashadder {
-    border: 1.3px dashed #a1878f;
-    border-radius: 4px;
-    padding: 5px;
-    box-sizing: border-box;
-    background-color: rgb(255, 255, 255);
-    background-image: url(https://i.pinimg.com/736x/ad/95/15/ad951520b6ae94b56cae1e265b59327c.jpg);
-    background-repeat: repeat;
-    background-size: 200px;
-}
-
-.h1 {
-    font-family: 'romanceA';
-    color: #6e6469;
-    text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
-    font-size: 20px;
-    font-weight: lighter;
-    padding-left: 4px;
-    letter-spacing: 1px;
-    filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 1px 0px #00000017);
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 9999;
-}
-
-.button-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.heart-gif {
-    display: none;
-    margin-right: 5px;
-    background: url(https://reij.neocities.org/pencil_right.gif) no-repeat center;
-    background-size: contain;
-    width: 10px;
-    height: 10px;
-    filter: grayscale(60%) brightness(1.2);
-}
-
-.button-wrapper button {
-  font-size: 12.5px;
-  border-radius: 3px;
-  border: 1px solid #a39795;
-  background: linear-gradient(to bottom, #fcfafb 0%, #fcf5f9 50%, #f7e7f0 51%, #f6ebf1 100%);
-  color: #a39795;
-  padding: 0.4em 0.5em;
-  transition: all 0s ease;
-  flex-grow: 1;
-  text-align: left;
-  cursor: inherit;
-  letter-spacing: 1px;
-  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
-  font-family: 'basiic';
-}
-
-.button-wrapper button:hover {
-  filter: brightness(1.05);
-}
-
-.button-wrapper.active .heart-gif {
-  display: block;
-}
-
-.button-wrapper.active button {
-  flex-grow: 0;
-  width: calc(100% - 5px);
-}
-
-.external-button-container a {
-  display: flex;
-  width: 100%;
-  text-decoration: none;
-}
-.external-button-container button {
-  width: 100%;
-}
-
-.external-button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding-bottom: 10px;
-}
-
-/* ===== CALENDAR ===== */
-.calendar {
-    margin-top: 15px;
-border-width: 7px;
-    border-style: solid;
-    border-image: url(https://rainingroses.neocities.org/images/bordering.png) 8 fill round;
-    background: transparent;
-        filter: drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795);
-    padding: 2px;
-    font-size: 12px;
-      color:white;
-        text-shadow: 2px 2px 0 #6e6469, 2px -2px 0 #6e6469, -2px 2px 0 #6e6469, -2px -2px 0 #6e6469, 2px 0px 0 #6e6469, 0px 2px 0 #6e6469, -2px 0px 0 #6e6469, 0px -2px 0 #6e6469;
-}
-
-.calendar-title {
-  background: #e3cad4;
-    text-align: center;
-    border-bottom: 1px solid #40353a;
-    margin-bottom: 5px;
-    font-weight: bold;
-    
-}
-
-.calendar table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.calendar td {
-  color:black;
-  text-shadow: none;
-        border: #e0bfcc 3.5px ridge;
-    border-radius: 10px;
-    text-align: center;
-    padding: 3px;
-    background: #fff;
-    
-}
-
-/* ===== CONTENT SIDE ===== */
-.content-area {
-    flex: 1;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-/* ===== SCROLL BOX ===== */
-.content {
-    height: 260px;
-    overflow-y: auto;
-    border: 1px solid #40353a;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.content h2 {
-    margin-top: 0;
-    font-size: 18px;
-    border-bottom: 1px dotted #40353a;
-    padding-bottom: 4px;
-}
-
-/* ===== LOWER BOX ===== */
-.lower-box {
-    border: 2px dotted #40353a;
-    border-radius: 8px;
-    padding: 8px;
-    background-image: url("https://files.catbox.moe/jo2faf.jpg");
-    background-size: 200px 100px;
-}
-
-/* ===== TWO SMALL BOXES ===== */
-.small-boxes {
-    display: flex;
-    gap: 8px;
-}
-
-/* ===== WINDOW BOX ===== */
-.window-box {
-    position: relative;
-    width: 200px;
-    height: 200px; /* square */
-    border: 2px solid #40353a;
-    background: #fff;
-    overflow: hidden;
-}
-
-/* ===== SCROLLABLE TEXT BEHIND ===== */
-.window-scroll {
-    position: absolute;
-    inset: 0;
-    padding: 10px;
-    font-size: 12px;
-    overflow-y: auto;
-    box-sizing: border-box;
-}
-
-/* ===== WINDOW FRAME IMAGE ===== */
-.window-frame {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 5;
-    pointer-events: none; /* lets you scroll text */
-}
-
-/* ===== INNER BOXES ===== */
-.small-boxes {
-    display: flex;
-    gap: 8px;
-}
-
-.small-box {
-    flex: 1;
-    border: 1px solid #40353a;
-    background: rgba(255,255,255,0.85);
-    padding: 6px;
-    font-size: 12px;
-}
-
-
-
-</style>
-
-<script>
-/* ===== Imported Calendar JS from Webestools ===== */
-function setStyle(el, style, value) {
-    el.style[style] = value;
-}
-
-function opacity(el, opacity) {
-    setStyle(el, "opacity", opacity / 100);
-}
-
-function calendar() {
-    var date = new Date();
-    var day = date.getDate();
-    var month = date.getMonth();
-    var year = date.getFullYear();
-    var months = ["January","February","March","April","May","June","July",
-                  "August","September","October","November","December"];
-    var days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31];
-
-    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-        days_in_month[1] = 29;
-    }
-
-    var total = days_in_month[month];
-    var beg = new Date(year, month, 1).getDay();
-
-    var html = "<table class='cal_calendar'><tr><th colspan='7'>" +
-               months[month] + " " + year + "</th></tr>" +
-               "<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th>" +
-               "<th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>";
-
-    var week = 0;
-
-    for (var i = 0; i < beg; i++) {
-        html += "<td class='cal_days_bef_aft'></td>";
-        week++;
-    }
-
-    for (var i = 1; i <= total; i++) {
-        if (week == 0) html += "<tr>";
-
-        if (i == day) {
-            html += "<td class='cal_today'>" + i + "</td>";
-        } else {
-            html += "<td>" + i + "</td>";
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>f2u layout</title>
+
+    <style>
+        /* ===== directory fonts ===== */
+        @font-face {
+            font-family: "Basiic";
+            src: url("fonts/basiic.ttf") format("truetype");
         }
 
-        week++;
-        if (week == 7) {
-            html += "</tr>";
-            week = 0;
+        @font-face {
+            font-family: 'littlespirit';
+            src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
         }
-    }
 
-    while (week != 0 && week < 7) {
-        html += "<td class='cal_days_bef_aft'></td>";
-        week++;
-        if (week == 7) html += "</tr>";
-    }
+        @font-face {
+            font-family: 'romanceA';
+            src: url("https://rainingroses.neocities.org/fonts/RomanceA.ttf");
+        }
 
-    html += "</table>";
 
-    document.getElementById("calendar-container").innerHTML = html;
-}
-</script>
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background: transparent;
+        }
+
+
+
+        ::selection {
+            background-color: #fdf2f8;
+            color: #8d7c76;
+        }
+
+        ::-moz-selection {
+            background-color: #fdf2f8;
+            color: #8d7c76;
+        }
+
+        .mali-semibold-italic {
+            font-family: "Mali", cursive;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 0;
+            background-image: url("https://rainingroses.neocities.org/images/bg2.png");
+            font-family: "Mali", "MS UI Gothic", Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        a,
+        button,
+        input,
+        textarea,
+        select,
+        label,
+        [onclick] {
+            cursor: inherit;
+        }
+
+        /* ===== CALENDAR (gradient style, matching reference layout) ===== */
+        #calendarcontain {
+            margin-top: 15px;
+            border-width: 7px;
+            border-style: solid;
+            border-image: url("https://rainingroses.neocities.org/images/bordering.png") 7 fill round;
+            height: auto;
+            filter: drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795);
+            border-radius: 10px;
+            z-index: 6;
+        }
+
+        .calendar {
+            width: 100%;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1.3px dashed #a1878f;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cal-header {
+            width: auto;
+            height: 20px;
+            background-color: #fdf2f8;
+            color: #8d7c76;
+            padding: 3px 10px 3px 3px;
+            text-align: right;
+            font-family: "Basiic";
+            font-size: 11px;
+            letter-spacing: 1px;
+            border-bottom: 1.3px dashed #a1878f;
+        }
+
+        .cal-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            font-size: 8px;
+            text-align: center;
+            color: #a1878f;
+            font-family: "Basiic";
+            font-weight: bold;
+            padding: 6px 6px 0 6px;
+        }
+
+        .cal-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            font-size: 9px;
+            text-align: center;
+            color: #8d7c76;
+            font-family: "Basiic";
+            padding: 6px;
+        }
+
+        .cal-day {
+            background: linear-gradient(to bottom, #fffdfe 29%, #fffdfe 39%, #f3e3ea 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 16px;
+            padding-top: 1px;
+            border-radius: 3px;
+            border: 1px solid #e0bfcc;
+            outline: 1px solid #fff;
+            outline-offset: -2px;
+            box-sizing: border-box;
+        }
+
+        .cal-day.empty {
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        .cal-day.today {
+            background: #e3cad4;
+            color: #fff;
+        }
+
+        /* ===== WRAPPER ===== */
+        .wrapper {
+            width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 32px solid;
+            border-image: url('https://files.catbox.moe/9djkei.png') 22 repeat;
+            border-radius: 30px;
+        }
+
+        .top-lace {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://rainingroses.neocities.org/images/crosslace.png");
+            background-repeat: repeat-x;
+            background-position: top center;
+            background-size: auto 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            pointer-events: none;
+            filter: grayscale(66%) sepia(6%) brightness(127%) saturate(88%) contrast(100%);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: relative;
+            height: 130px;
+            background-image: url("https://rainingroses.neocities.org/images/laceheader1.png");
+            background-size: contain;
+            border-bottom: 1px solid #40353a;
+        }
+
+        .header-text {
+            font-family: "romanceA";
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            text-shadow: 2px 2px 0 #6e6469, 2px -2px 0 #6e6469, -2px 2px 0 #6e6469, -2px -2px 0 #6e6469, 2px 0px 0 #6e6469, 0px 2px 0 #6e6469, -2px 0px 0 #6e6469, 0px -2px 0 #6e6469;
+            padding: 6px 10px;
+            font-size: 60px;
+        }
+
+        .header-side-img {
+            position: absolute;
+            right: -9%;
+            top: 0;
+            height: 130%;
+            width: auto;
+            transform: scaleX(-1);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        h2 {
+            font-family: "romanceA";
+            color: white;
+            text-shadow: 2px 2px 0 #6e6469, 2px -2px 0 #6e6469, -2px 2px 0 #6e6469, -2px -2px 0 #6e6469, 2px 0px 0 #6e6469, 0px 2px 0 #6e6469, -2px 0px 0 #6e6469, 0px -2px 0 #6e6469;
+        }
+
+        /* ===== MAIN AREA ===== */
+        .main {
+            display: flex;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            width: 190px;
+            border-right: 1px dotted #40353a;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* ===== ldirectory box, ported exactly ===== */
+        #navcontain {
+            border-width: 7px;
+            border-style: solid;
+            border-image: url("https://rainingroses.neocities.org/images/bordering.png") 7 fill round;
+            height: auto;
+            filter: drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795) drop-shadow(0px 0px 1px #a39795);
+            border-radius: 10px;
+            z-index: 6;
+        }
+
+        .dashadder {
+            border: 1.3px dashed #a1878f;
+            border-radius: 4px;
+            padding: 5px;
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            background-image: url(https://i.pinimg.com/736x/ad/95/15/ad951520b6ae94b56cae1e265b59327c.jpg);
+            background-repeat: repeat;
+            background-size: 200px;
+        }
+
+        .h1 {
+            font-family: 'romanceA';
+            color: #6e6469;
+            text-shadow: -2px 0 #fff, 0 2px #fff, 2px 0 #fff, 0 -2px #fff;
+            font-size: 20px;
+            font-weight: lighter;
+            padding-left: 4px;
+            letter-spacing: 1px;
+            filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 0px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 1px white) drop-shadow(0px 1px 0px #00000017);
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 9999;
+        }
+
+        .button-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .heart-gif {
+            display: none;
+            margin-right: 5px;
+            background: url(https://i.giphy.com/XYFengWFGpYTrAqJ9r.webp) no-repeat center;
+            background-size: contain;
+            width: 35px;
+            height: 35px;
+        }
+
+        .button-wrapper button {
+            font-size: 12.5px;
+            border-radius: 3px;
+            border: 1px solid #a39795;
+            background: linear-gradient(to bottom, #fcfafb 0%, #fcf5f9 50%, #f7e7f0 51%, #f6ebf1 100%);
+            color: #a39795;
+            padding: 0.4em 0.5em;
+            transition: all 0s ease;
+            flex-grow: 1;
+            text-align: right;
+            cursor: inherit;
+            letter-spacing: 1px;
+            text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+            font-family: 'basiic';
+        }
+
+        .button-wrapper button:hover {
+            filter: brightness(1.05);
+        }
+
+        .button-wrapper.active .heart-gif {
+            display: block;
+        }
+
+        .button-wrapper.active button {
+            flex-grow: 0;
+            width: calc(100% - 5px);
+        }
+
+        .external-button-container a {
+            display: flex;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .external-button-container button {
+            width: 100%;
+        }
+
+        .external-button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding-bottom: 10px;
+        }
+
+        /* ===== CONTENT SIDE ===== */
+        .content-area {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* ===== SCROLL BOX ===== */
+        .content {
+            height: 260px;
+            overflow-y: auto;
+            border: 1px solid #40353a;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            font-size: 18px;
+            border-bottom: 1px dotted #40353a;
+            padding-bottom: 4px;
+        }
+
+        /* ===== LOWER BOX ===== */
+        .lower-box {
+            border: 2px dotted #40353a;
+            border-radius: 8px;
+            padding: 8px;
+            background-image: url("https://files.catbox.moe/jo2faf.jpg");
+            background-size: 200px 100px;
+        }
+
+        /* ===== TWO SMALL BOXES ===== */
+        .small-boxes {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* ===== WINDOW BOX ===== */
+        .window-box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            /* square */
+            border: 2px solid #40353a;
+            background: #fff;
+            overflow: hidden;
+        }
+
+        /* ===== SCROLLABLE TEXT BEHIND ===== */
+        .window-scroll {
+            position: absolute;
+            inset: 0;
+            padding: 10px;
+            font-size: 12px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        /* ===== WINDOW FRAME IMAGE ===== */
+        .window-frame {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            pointer-events: none;
+            /* lets you scroll text */
+        }
+
+        /* ===== INNER BOXES ===== */
+        .small-boxes {
+            display: flex;
+            gap: 8px;
+        }
+
+        .small-box {
+            flex: 1;
+            border: 1px solid #40353a;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 6px;
+            font-size: 12px;
+        }
+    </style>
+
+    <script>
+        /* ===== Calendar (grid style) ===== */
+        function generateCalendar() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var today = date.getDate();
+
+            var months = ["January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"];
+
+            document.getElementById("calHeader").textContent = months[month] + " " + year;
+
+            var daysContainer = document.getElementById("calDays");
+            daysContainer.innerHTML = "";
+
+            var firstDay = new Date(year, month, 1).getDay();
+            var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            for (var i = 0; i < firstDay; i++) {
+                var empty = document.createElement("div");
+                empty.className = "cal-day empty";
+                daysContainer.appendChild(empty);
+            }
+
+            for (var d = 1; d <= daysInMonth; d++) {
+                var dayDiv = document.createElement("div");
+                dayDiv.className = "cal-day" + (d === today ? " today" : "");
+                dayDiv.textContent = d;
+                daysContainer.appendChild(dayDiv);
+            }
+        }
+    </script>
 </head>
 
 <body>
 
-<!-- TOP LACE DECORATION -->
-<div class="top-lace"></div>
+    <!-- TOP LACE DECORATION -->
+    <div class="top-lace"></div>
 
-<div class="wrapper">
+    <div class="wrapper">
 
-    <div class="header">
-        <div class="header-text"><b>raining roses</b></div>
-        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmtrYzBzbHFmczk2ZWdtajRzYXJ5NWVvdmxsNTR5em1pNGllMGg4OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/oiwtpbwZrUpi4Ggy3T/giphy.gif" class="header-side-img" alt="">
-    </div>
-
-    <div class="main">
-
-        <div class="nav">
-
-            <!-- ===== Directory box ===== -->
-            <div id="navcontain">
-              <div class="dashadder">
-
-                <!-- Directory heading -->
-                <h1 class="h1" style="margin-bottom: -0.5em;">
-                  Directory
-                  <img src="https://reij.neocities.org/clippy.gif" style="margin-right: 8px;">
-                </h1>
-
-                <!-- Directory buttons -->
-                <div class="button-container">
-                  <br>
-                  <div class="button-wrapper active"><span class="heart-gif"></span><button onclick="location.href='#'">Home♡</button></div>
-                  <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">About♡</button></div>
-                  <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">Diary♡</button></div>
-                  <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">Links♡</button></div>
-                  <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">Guestbook♡</button></div>
-                </div>
-
-                <!-- Off-site links heading -->
-                <h1 class="h1" style="margin-bottom: 0.5em;">
-                  more...
-                  <img src="https://reij.neocities.org/clippy.gif" style="margin-right: 8px;">
-                </h1>
-
-                <!-- External links -->
-                <div class="external-button-container">
-                  <div class="button-wrapper">
-                    <span class="heart-gif"></span>
-                    <a href="https://neocities.org/site/rainingroses" target="_blank">
-                      <button>Neocities ♡</button>
-                    </a>
-                  </div>
-                </div>
-
-              </div> <!-- end dashadder -->
-            </div> <!-- end navcontain -->
-
-            <div id="calendar-container" class="calendar"></div>
-
-<script>
-calendar(); // run on page load
-</script>
-
+        <div class="header">
+            <div class="header-text"><b>raining roses</b></div>
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmtrYzBzbHFmczk2ZWdtajRzYXJ5NWVvdmxsNTR5em1pNGllMGg4OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/oiwtpbwZrUpi4Ggy3T/giphy.gif" class="header-side-img" alt="">
         </div>
 
-        <div class="content-area">
-            <div class="content">
-                <h2>Main Content</h2>
-                <p>
-                    This box scrolls. Add lots of text, diary entries,
-                    updates, or shrine content here.
-                </p>
-                <p>Old web sites loved scroll boxes.</p>
-                <p>Lorem ipsum dolor sit amet...</p>
-                <p>Lorem ipsum dolor sit amet...</p>
-                <p>Lorem ipsum dolor sit amet...</p>
-                <p>Lorem ipsum dolor sit amet...</p>
-            </div>
+        <div class="main">
 
-            <div class="lower-box">
-                <div class="small-boxes">
-                    <div class="small-box">
-                        Status / Updates
+            <div class="nav">
+
+                <!-- ===== Directory box ===== -->
+                <div id="navcontain">
+                    <div class="dashadder">
+
+                        <!-- Directory heading -->
+                        <h1 class="h1" style="margin-bottom: -0.5em;">
+                            Directory
+                            <img src="https://reij.neocities.org/clippy.gif" style="margin-right: 8px;">
+                        </h1>
+
+                        <!-- Directory buttons -->
+                        <div class="button-container">
+                            <br>
+                            <div class="button-wrapper active"><span class="heart-gif"></span><button onclick="location.href='#'">Home ❤︎</button></div>
+                            <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">About ❤</button></div>
+                            <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">Diary ❤</button></div>
+                            <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">Links ❤</button></div>
+                            <div class="button-wrapper"><span class="heart-gif"></span><button onclick="location.href='#'">Guestbook ❤</button></div>
+                        </div>
+
+                        <!-- Off-site links heading -->
+                        <h1 class="h1" style="margin-bottom: 0.5em;">
+                            more...
+                            <img src="https://reij.neocities.org/clippy.gif" style="margin-right: 8px;">
+                        </h1>
+
+                        <!-- External links -->
+                        <div class="external-button-container">
+                            <div class="button-wrapper">
+                                <span class="heart-gif"></span>
+                                <a href="https://neocities.org/site/rainingroses" target="_blank">
+                                    <button>Neocities ❤</button>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div> <!-- end dashadder -->
+                </div> <!-- end navcontain -->
+
+                <div id="calendarcontain">
+                    <div class="calendar">
+                        <div class="cal-header" id="calHeader">loading...</div>
+                        <div class="cal-weekdays">
+                            <div>S</div><div>M</div><div>T</div><div>W</div><div>T</div><div>F</div><div>S</div>
+                        </div>
+                        <div class="cal-days" id="calDays"></div>
                     </div>
-<div class="window-box">
-    <div class="window-scroll">
-        <p>
-            This text scrolls behind the window.
-        </p>
-        <p>
-            put whatevr u wnt
-        </p>
-        <p>
-            Long diary entries, thoughts,
-            updates, or lyrics go here.
-        </p>
-        <p>
-            Keep adding text and it will scroll.
-        </p>
-        <p>
-            
-        </p>
-        <p>
-            ✧ ✧ ✧ ✧ ✧
-        </p>
-    </div>
+                </div>
 
-    <img
-        src="https://files.catbox.moe/cso1wz.png"
-        class="window-frame"
-        alt="window frame">
-</div>
+                <script>
+                    generateCalendar();
+                </script>
+
+            </div>
+
+            <div class="content-area">
+                <div class="content">
+                    <h2>Main Content</h2>
+                    <p>
+                        This box scrolls. Add lots of text, diary entries,
+                        updates, or shrine content here.
+                    </p>
+                    <p>Old web sites loved scroll boxes.</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                    <p>Lorem ipsum dolor sit amet...</p>
+                </div>
+
+                <div class="lower-box">
+                    <div class="small-boxes">
+                        <div class="small-box">
+                            Status / Updates
+                        </div>
+                        <div class="window-box">
+                            <div class="window-scroll">
+                                <p>
+                                    This text scrolls behind the window.
+                                </p>
+                                <p>
+                                    put whatevr u wnt
+                                </p>
+                                <p>
+                                    Long diary entries, thoughts,
+                                    updates, or lyrics go here.
+                                </p>
+                                <p>
+                                    Keep adding text and it will scroll.
+                                </p>
+                                <p>
+
+                                </p>
+                                <p>
+                                    ✧ ✧ ✧ ✧ ✧
+                                </p>
+                            </div>
+
+                            <img src="https://files.catbox.moe/cso1wz.png" class="window-frame" alt="window frame">
+                        </div>
 
 
+                    </div>
                 </div>
             </div>
+
         </div>
 
     </div>
 
-</div>
-
-<!-- ===== ANIMATED SYRINGE CURSOR ===== -->
-<script>
+    <!-- ⬇ PASTE YOUR ORIGINAL "ANIMATED SYRINGE CURSOR" <script> BLOCK HERE ⬇ -->
+    <!-- (the one with `const cursorFrames = [...]` and the setInterval below it) -->
+    <!-- I deliberately left this out rather than retype 20 base64 image frames by hand,
+         since that's the kind of thing a single dropped character silently breaks. -->
+    <script>
 const cursorFrames = [
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAGfklEQVR4nMWXf2gcxxXH3+zeKaf4TtmzZZ9sy3uKUB0LtSHUIJdKkeVATSHg2KR2/ikIh4IhEAQFQUoa1odJI7cFSYS6HAW7FxA2ioiKLEhs15YlESunto6RTo5rKZL2fvh+6E63e7t3e792Xv+wVlztqyNFgr6/Ztl5M5/35vveMAD/bQT+H4aIjM/n225AIOKmQBBxbY3ScTljAAACgQBnMpn+5vV69wMAEkJwExCEEIKEEFz9MMZl1zPoyNTUVEMmk/lLIpE4zbLsyokTJ6RVJ9wogdDRwQEAuDweSejo4IDjwNXXJ5UFWKUERIT+/v76QqHwpdPpLCiK0nrs2DG/IAiMy+Wi37UpIhIgBC6dO1fLWp6/A5QWU4p2rMpWOYwUTbSY++npD34bBHyclaecEZFcu3Zt2+joqD8cDuP169cX3W43DwAgCALznZsDQE9nJ/fX3/8xkFNUTIkBHPzTn+Xk/AJGfLN48XfnAz2dAlc6H2BVAwbR0aNHNUVRWn0+39KhQ4fqOI4bEwSBd7lcFBEZA/SZ+kAEXU6BzWajrx8/XgUEqK7rQAgBAKn8EZRGQghBt9vNcxw31tzcXDc5ObmkKMrhM2fO+Mv4YqkvAEDfe+/t2+XYPX74tdecFZbnIKtpMH5rVFyORdo6u7sDpQE/BQDwON0ul4t2d3fzPM+PtbS01M3evy/mJKndnEzK4WiUmADoaZdLKgdBCME/vP++s9pqGzWZK7hisSDFldSRrg8/FI3//zMDT0K43W6e5/lxvrbWSeRUMrSwiMvxZbKzeqccFcPtv/ygSywjUgIAKHR2co7KShLVNFytgI1VlCG8ocuX63y3J1bysTguz81j7OE8Zh6F8Urfx+K5d95xls59RmAb7ylGfzj/9tu2/p7eRCEpUVRUXYvEqBwI6mowhJf7PhbdglC2UtYlWFitgmdxvNjUZHbs2mU2MSwARfKcxUJYhmWKuk7fOHmSb2z60cRAby/vcrloKYTRAZ+q+Q0CwA/q6+kenk9ApYUAy2IxnwdpZQVMJhNT0Iu0ua2Nr9lTWxZi02ak8F83bzofev+xVEhnMHT/gZ6LxRFTKmbCUZREv56NxHB8YFAc6O1dV+PaMAQAwA2Phx8b/EwspDOIaU0vJpJIpRRmwlGU/YE1iGGPZ+shjMVueDz8Q++UWEhn8NE3D/RiIomYUlENhTG5JOq5WBy/unNHHB4eXoNYjxDXZSjgGsTY4GdiPp1BTGf03HICgzOzqIQeoRQI6rlsFr1e75IBsea/zqp4ppVm4t/eKbGQyeCj2W8eayKbQ0WWMZlM6rlcDr1e79Lo6GjdhY8+svdfuGB/EsYYb5gGBWSIi9AbHg9f8bx14ift7XxFlY3qDGEIy0JaVUHXdbRYLOSryclkPBiEndu3y1qhcGTxwQNZlmX4TXd30lhvw0IhLkIFQWB+1tHhlzPqq1/PP/TnqM6EIxGKlILVagWT2UySKysoRaP21998037oyJE6q8Vy115d/a2zoeHu8MAAv+njMDQxMDDAj4yMiNlsFhGR4qotx2I4+MknVE4m6dzMDFVlGWe8XkynUjj++efBoUuXuO+VgSczcerUKb8kSW337t0Tc7kcZDUNs5oGBABqHA4yNz1NCMOQjKoCUgoZRQGk9Ptr4KlMIDKEEDo0NFRHdf0uk8/bUdfR4XCQpoMHYdrrxVA4jHqxmGBZFnVKU1aGOfx1IBA5e/bs5utz9Y4H4d13bS+98krwjbfeshXzeZybmSHpdBp21NZCLB5PJQKB9sDCgvyCxQIvNTYutx4/rgAAmDYLYHDsb2xk99bUJFiGsYZDIeCqq2Fufp5iZaWyb2+t1WGuuF5MSPru3bsZ+wt2zTcx8WpTa2tgS15ChppvX7niNHHc3R+3tNgzqgpfXL26bDabf/7Dhv3Xml5+ubpYLAIAQFpVwL+wuKTmswe3KgNACMHzXV2JvQ0NLLdjB6KuAwFgArOzCSqlivsPHMC0lsGspiFDCBsPRyAeUbbsCAAAgLKsiWHZlfoDB6o0VYVp38xKFceZahyOCoZlIatl8cu/32Rt26x+Jo+HT/76V8kte4wax3D100/3cVbrHQSAkCQ11+ucaqvdNrPnxTo+n83CvUmvX4lH237R1SVuySVVzi719HBGoyFA4NuJf/LTt24v3uq/sjh28eI+gC2+rp+wtahKI5weGbGPrF5KWDLnPx3SCV/beIypAAAAAElFTkSuQmCC",
   "data:image/png;base64,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",
@@ -628,5 +608,7 @@ setInterval(() => {
 }, 160); // ~16fps, tweak this number for faster/slower animation
 </script>
 
+
 </body>
+
 </html>
