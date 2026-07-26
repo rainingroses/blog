@@ -7,8 +7,18 @@
   --advanced-layout: true;
 }
 
+@font-face {
+  font-family: 'pixelatedelegance';
+  src: url("https://files.catbox.moe/xmx4nj.ttf");
+}
+
+@font-face {
+  font-family: 'romanceA';
+  src: url("https://files.catbox.moe/rtfo08.ttf");
+}
+
 body {
-    font-family: "rainyhearts";
+    font-family: "pixelatedelegance";
     color: #996e59 !important;
 }
 
@@ -31,7 +41,7 @@ a  {
   font-family: 'rainyhearts';
 }
 #top_banner {
-    font-family: "rainyhearts";
+    font-family: "romanceA";
     font-weight: bolder !important;
     background: #AAF;
     background: linear-gradient(0deg, var(--main-fg-color) 0%, var(--main-fg-color-light) 50%, var(--main-fg-color) 100%);
@@ -137,7 +147,7 @@ a  {
     background-color: #FFF;
     border-radius: 0;
     border-top: 1px solid var(main-fg-color-light);
-    font-family: "rainyhearts";
+    font-family: "pixelatedelegance";
 }
 #name {
     background-color: #FFF;
@@ -145,7 +155,7 @@ a  {
     border: solid 1px #7C431C;
     border-color: var(--main-fg-color-light);
     padding: 2px;
-    font-family: "rainyhearts";
+    font-family: "pixelatedelegance";
     outline: none;
     color: #996e59;
 }
@@ -201,7 +211,7 @@ a  {
 #closeSettingsBtn {
   background: #82644f;
   color: #FFF;
-  font-family: 'rainyhearts';
+  font-family: 'pixelatedelegance';
 }
 
 #save {
@@ -209,5 +219,5 @@ a  {
   border-radius: 3px;
   background: white;
   color: #996e59;
-  font-family: 'rainyhearts';
+  font-family: 'pixelatedelegance';
 }
