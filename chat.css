@@ -20,6 +20,7 @@
 body {
     font-family: "pixelatedelegance";
     color: #996e59 !important;
+    font-size: 9px;
 }
 
 ::selection {
