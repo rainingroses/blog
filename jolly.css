@@ -7,6 +7,21 @@
   --advanced-layout: true;
 }
 
+@font-face {
+  font-family: 'pixelatedelegance';
+  src: url("https://files.catbox.moe/xmx4nj.ttf");
+}
+
+@font-face {
+  font-family: 'littlespirit';
+  src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
+}
+
+@font-face {
+    font-family: 'romanceA';
+  src: url("RomanceA.ttf");
+}
+
 body {
     font-family: "Mali", cursive;
     color: #8d7c76 !important;
@@ -28,10 +43,10 @@ body {
 
 a  {
   color: #a1878f;
-  font-family: 'Mali', cursive;
+  font-family: 'rainyhearts', cursive;
 }
 #top_banner {
-    font-family: "Mali", cursive;
+    font-family: "romanceA", cursive;
     font-weight: bolder !important;
     background: #AAF;
     background: linear-gradient(0deg, var(--main-fg-color) 0%, var(--main-fg-color-light) 50%, var(--main-fg-color) 100%);
@@ -145,7 +160,7 @@ a  {
     border: solid 1px #a1878f;
     border-color: var(--main-fg-color-light);
     padding: 2px;
-    font-family: "Mali", cursive;
+    font-family: "rainyhearts", cursive;
     outline: none;
     color: #8d7c76;
 }
@@ -201,7 +216,7 @@ a  {
 #closeSettingsBtn {
   background: #8d7c76;
   color: #FFF;
-  font-family: 'Mali', cursive;
+  font-family: 'rainyhearts', cursive;
 }
 
 #save {
@@ -209,5 +224,5 @@ a  {
   border-radius: 3px;
   background: white;
   color: #8d7c76;
-  font-family: 'Mali', cursive;
+  font-family: 'rainyhearts', cursive;
 }
