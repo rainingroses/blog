@@ -1,70 +1,55 @@
-@font-face {
-  font-family: 'pixelatedelegance';
-  src: url("https://files.catbox.moe/xmx4nj.ttf");
-}
-
-@font-face {
-  font-family: 'littlespirit';
-  src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
-}
-
-@font-face {
-  font-family: 'romanceA';
-  src: url("https://file.garden/akgob9Kl3FKsBuly/RomanceA.ttf");
-}
 :root {
-  --main-fg-color: #f7e9f0;
-  --main-fg-color-light: #fdf2f8;
-  --main-bg-color: #fffdfe;
-  --text-color: #8d7c76;
-  --shadow-color: #a39795;
+  --main-fg-color: #fff4f6;
+  --main-fg-color-light: #fff5f7;
+  --main-bg-color: #FFFFFF;
+  --text-color: #996e59;
+  --shadow-color: #33000d;
   --advanced-layout: true;
 }
 
 body {
-    font-family: "pixelatedelegance", cursive;
-    color: #8d7c76 !important;
+    font-family: "rainyhearts";
+    color: #996e59 !important;
 }
 
 ::selection {
-  background: var(--main-fg-color) !important;
+  background: var(--main-fg-color) !important;          
 }
 
 #background, #settingsMenu {
-    background: url("https://file.garden/akgob9Kl3FKsBuly/sony%20cybershot/0885.gif");
+    background: url("https://foollovers.com/mat/dot/n17-bg-polkadot.gif");
     background-repeat: repeat;
 }
 
 #background, #settingsMenu {
-   scrollbar-color: #e0bfcc transparent;
+   scrollbar-color: #ffe0e7 transparent;
    overflow: scroll;
 }
 
 a  {
-  color: #a1878f;
-  font-family: 'pixelatedelegance', cursive;
-  text-decoration: none;
-  border-bottom: 1px dotted #a1878f;
+  color: #7C431C;
+  font-family: 'rainyhearts';
 }
-
 #top_banner {
-    font-family: "romanceA";
-    font-weight: lighter !important;
-    letter-spacing: 1px;
+    font-family: "rainyhearts";
+    font-weight: bolder !important;
+    background: #AAF;
     background: linear-gradient(0deg, var(--main-fg-color) 0%, var(--main-fg-color-light) 50%, var(--main-fg-color) 100%);
     width: calc(100% - 2px);
-    border: 1.3px dashed #a1878f;
-    box-shadow: 0 0 2px #FFF, 0 0 2px #FFF, 0 0 1px #FFF, 0 3px 4px var(--shadow-color);
+    border: solid 1px #000;
+    border-color: var(--main-fg-color);
+ 0 0 2px #FFF, 0 0 2px #FFF, 0 0 1px #FFF, 0 3px 4px var(--shadow-color);
     position: relative;
     z-index: 4;
-    color: #8d7c76;
+    color: #9a6e59;
 }
-
 .allMessages {
-    background-color: #f7e9f0;
+    background-color: var(--main-bg-color);
+    background-size: 100px 100px;
     box-shadow: 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 3px 4px var(--shadow-color);
-    border: 1.3px dashed #a1878f;
-    border-radius: 8px;
+    border: solid 1px #000;
+    border-color: var(--main-fg-color);
+    border-radius: 3px;
     margin: 0 20px 0 20px;
     position: relative;
 }
@@ -85,6 +70,7 @@ a  {
 }
 .allMessages.recieved:before {
   right: 5px;
+  
 }
 .sent {
   padding-left: 25px;
@@ -99,16 +85,15 @@ a  {
     padding-top: 20px;
 }
 .allMessages.pm {
-    border-color: #e0bfcc;
+    border-color: #e2f8ff;
 }
 .allMessages.pm:after {
     content: "Private Message";
-    font-family: 'pixelatedelegance';
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e3cad4;
-    color: #fff;
+    background-color: #F55;
+    color: #FFF;
     height: 16px;
     padding: 5px;
     position: absolute;
@@ -124,9 +109,6 @@ a  {
 .senderInfo {
   display: block;
   text-align: left;
-  font-family: 'pixelatedelegance';
-  font-size: 9px;
-  letter-spacing: 0.3px;
 }
 .sent > .senderInfo {
   text-align: right;
@@ -140,41 +122,40 @@ a  {
 }
 
 .senderInfo:has(.owner) {
-  color: #6e6469;
+  color: #4A2B17;
 }
 .senderInfo:has(.mod) {
-  color: #a1878f;
+  color: #7C431C;
 }
 
 #timestamp {
-    font-family: 'pixelatedelegance';
-    font-size: 7pt;
-    color: #a1878f;
+    font-size: 8pt;
     margin-top: 10px !important;
     padding-left: 25px;
 }
 #input, #nameEntry {
-    background-color: #fffdfe;
-    border-radius: 4px;
-    border-top: 1.3px dashed #a1878f;
-    font-family: "pixelatedelegance", cursive;
+    background-color: #FFF;
+    border-radius: 0;
+    border-top: 1px solid var(main-fg-color-light);
+    font-family: "rainyhearts";
 }
 #name {
-    background-color: #fffdfe;
-    border-radius: 4px;
-    border: 1.3px dashed #a1878f;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: solid 1px #7C431C;
+    border-color: var(--main-fg-color-light);
     padding: 2px;
-    font-family: "pixelatedelegance", cursive;
+    font-family: "rainyhearts";
     outline: none;
-    color: #8d7c76;
+    color: #996e59;
 }
 
 #settings:hover {
-    filter: drop-shadow(0 0 3px #f7e9f0) drop-shadow(0 0 3px #f7e9f0) drop-shadow(0 0 3px #f7e9f0);
+    filter: drop-shadow(0 0 3px #FFF) drop-shadow(0 0 3px #FFF) drop-shadow(0 0 3px #FFF);
     transform: rotate(180deg);
 }
 #settings {
-    filter: drop-shadow(0 0 1px #f7e9f0) drop-shadow(0 0 1px #f7e9f0) drop-shadow(0 0 1px #f7e9f0);
+    filter: drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF);
     transition: all 250ms linear;
 }
 #emojiTrayToggle {
@@ -187,10 +168,11 @@ a  {
     opacity: 0.5;
 }
 #is_typing {
-    filter: drop-shadow(0 0 1px #f7e9f0) drop-shadow(0 0 1px #f7e9f0) drop-shadow(0 0 1px #f7e9f0);
-    background-color: #fffdfe;
-    border: 1.3px dashed #a1878f;
-    border-radius: 4px;
+    filter: drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF);
+    background-color: #FFF;
+    border: solid 1px #000;
+    border-color: var(--main-fg-color-light);
+    border-radius: 3px;
     left: unset;
     right: 10px;
     bottom: 27px;
@@ -201,34 +183,31 @@ a  {
     align-items: center;
     justify-content: flex-end;
     content: "someone is typing";
-    font-family: 'pixelatedelegance';
-    font-size: 9pt;
+    font-size: 10pt;
     position: fixed;
     right: 35px;
     bottom: 0;
     width: 60vw;
-    color: #8d7c76;
+    color: #000;
     z-index: 100000;
 }
 #is_typing > span {
-    background-color: #a1878f;
-    border-radius: 50%;
+    background-color: var(--main-fg-color-light);
+    border-radius: 0;
     height: 2px;
     width: 2px;
 }
 
 #closeSettingsBtn {
-  background: #a1878f;
+  background: #82644f;
   color: #FFF;
-  font-family: 'pixelatedelegance';
-  border: none;
-  border-radius: 3px;
+  font-family: 'rainyhearts';
 }
 
 #save {
-  border: 1.3px dashed #a1878f;
+  border: 1px solid #7C431C;
   border-radius: 3px;
-  background: #fffdfe;
-  color: #8d7c76;
-  font-family: 'pixelatedelegance';
+  background: white;
+  color: #996e59;
+  font-family: 'rainyhearts';
 }
