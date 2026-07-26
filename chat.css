@@ -61,9 +61,7 @@ a  {
 }
 
 .allMessages {
-    background-color: var(--main-bg-color);
-    background-image: url("https://rainingroses.neocities.org/images/f02-bg-biascheck.png");
-    background-size: 20px;
+    background-color: #8d7c76;
     box-shadow: 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 3px 4px var(--shadow-color);
     border: 1.3px dashed #a1878f;
     border-radius: 8px;
