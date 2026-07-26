@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: "romanceA", cursive;
+    font-family: "pixelatedelegance", cursive;
     color: #8d7c76 !important;
 }
 
@@ -42,7 +42,7 @@ body {
 
 a  {
   color: #a1878f;
-  font-family: 'romanceA', cursive;
+  font-family: 'pixelatedelegance', cursive;
   text-decoration: none;
   border-bottom: 1px dotted #a1878f;
 }
@@ -61,7 +61,7 @@ a  {
 }
 
 .allMessages {
-    background-color: #8d7c76;
+    background-color: #f7e9f0;
     box-shadow: 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 3px 4px var(--shadow-color);
     border: 1.3px dashed #a1878f;
     border-radius: 8px;
@@ -157,14 +157,14 @@ a  {
     background-color: #fffdfe;
     border-radius: 4px;
     border-top: 1.3px dashed #a1878f;
-    font-family: "romanceA", cursive;
+    font-family: "pixelatedelegance", cursive;
 }
 #name {
     background-color: #fffdfe;
     border-radius: 4px;
     border: 1.3px dashed #a1878f;
     padding: 2px;
-    font-family: "romanceA", cursive;
+    font-family: "pixelatedelegance", cursive;
     outline: none;
     color: #8d7c76;
 }
