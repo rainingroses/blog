@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: "Mali", cursive;
+    font-family: "romanceA", cursive;
     color: #8d7c76 !important;
 }
 
@@ -42,7 +42,7 @@ body {
 
 a  {
   color: #a1878f;
-  font-family: 'Mali', cursive;
+  font-family: 'romanceA', cursive;
   text-decoration: none;
   border-bottom: 1px dotted #a1878f;
 }
@@ -159,14 +159,14 @@ a  {
     background-color: #fffdfe;
     border-radius: 4px;
     border-top: 1.3px dashed #a1878f;
-    font-family: "Mali", cursive;
+    font-family: "romanceA", cursive;
 }
 #name {
     background-color: #fffdfe;
     border-radius: 4px;
     border: 1.3px dashed #a1878f;
     padding: 2px;
-    font-family: "Mali", cursive;
+    font-family: "romanceA", cursive;
     outline: none;
     color: #8d7c76;
 }
