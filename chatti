@@ -1,0 +1,224 @@
+:root {
+  --main-fg-color: #fff4f6;
+  --main-fg-color-light: #fff5f7;
+  --main-bg-color: #FFFFFF;
+  --text-color: #996e59;
+  --shadow-color: #33000d;
+  --advanced-layout: true;
+}
+
+@font-face {
+  font-family: 'pixelatedelegance';
+  src: url("https://files.catbox.moe/xmx4nj.ttf");
+}
+
+@font-face {
+  font-family: 'romanceA';
+  src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
+}
+
+body {
+    font-family: "pixelatedelegance";
+    color: #996e59 !important;
+    font-size: 9px;
+}
+
+::selection {
+  background: var(--main-fg-color) !important;          
+}
+
+#background, #settingsMenu {
+    background: url("https://foollovers.com/mat/dot/n17-bg-polkadot.gif");
+    background-repeat: repeat;
+}
+
+#background, #settingsMenu {
+   scrollbar-color: #ffe0e7 transparent;
+   overflow: scroll;
+}
+
+a  {
+  color: #7C431C;
+  font-family: 'pixelatedelegance';
+}
+#top_banner {
+    font-family: "romanceA";
+    font-weight: bolder !important;
+    background: #AAF;
+    background: linear-gradient(0deg, var(--main-fg-color) 0%, var(--main-fg-color-light) 50%, var(--main-fg-color) 100%);
+    width: calc(100% - 2px);
+    border: solid 1px #000;
+    border-color: var(--main-fg-color);
+ 0 0 2px #FFF, 0 0 2px #FFF, 0 0 1px #FFF, 0 3px 4px var(--shadow-color);
+    position: relative;
+    z-index: 4;
+    color: #9a6e59;
+}
+.allMessages {
+    background-color: var(--main-bg-color);
+    background-size: 100px 100px;
+    box-shadow: 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 0 4px #FFF, 0 3px 4px var(--shadow-color);
+    border: solid 1px #000;
+    border-color: var(--main-fg-color);
+    border-radius: 3px;
+    margin: 0 20px 0 20px;
+    position: relative;
+}
+.allMessages:before {
+  content: " ";
+  height: calc(100% - 20px);
+  width: 50px;
+  max-height: 50px;
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+}
+.allMessages.sent:before {
+  left: 5px;
+}
+.allMessages.recieved:before {
+  right: 5px;
+  
+}
+.sent {
+  padding-left: 25px;
+}
+.recieved {
+  padding-right: 25px;
+}
+.allMessages.containsOnlyEmojis .emoji {
+    height: 50px;
+}
+.msgWrapper:has(.pm) {
+    padding-top: 20px;
+}
+.allMessages.pm {
+    border-color: #e2f8ff;
+}
+.allMessages.pm:after {
+    content: "Private Message";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F55;
+    color: #FFF;
+    height: 16px;
+    padding: 5px;
+    position: absolute;
+    right: 5vw;
+    bottom: 100%;
+    z-index: 5;
+    border-radius: 5px 5px 0 0;
+}
+.msgWrapper + .msgWrapper {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.senderInfo {
+  display: block;
+  text-align: left;
+}
+.sent > .senderInfo {
+  text-align: right;
+}
+.sent > .msgBody {
+  text-align: right;
+}
+.msgBody, .senderInfo {
+  position: relative;
+  z-index: 2;
+}
+
+.senderInfo:has(.owner) {
+  color: #4A2B17;
+}
+.senderInfo:has(.mod) {
+  color: #7C431C;
+}
+
+#timestamp {
+    font-size: 8pt;
+    margin-top: 10px !important;
+    padding-left: 25px;
+}
+#input, #nameEntry {
+    background-color: #FFF;
+    border-radius: 0;
+    border-top: 1px solid var(main-fg-color-light);
+    font-family: "pixelatedelegance";
+}
+#name {
+    background-color: #FFF;
+    border-radius: 3px;
+    border: solid 1px #7C431C;
+    border-color: var(--main-fg-color-light);
+    padding: 2px;
+    font-family: "pixelatedelegance";
+    outline: none;
+    color: #996e59;
+}
+
+#settings:hover {
+    filter: drop-shadow(0 0 3px #FFF) drop-shadow(0 0 3px #FFF) drop-shadow(0 0 3px #FFF);
+    transform: rotate(180deg);
+}
+#settings {
+    filter: drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF);
+    transition: all 250ms linear;
+}
+#emojiTrayToggle {
+    height: 15px;
+    width: 15px;
+    padding: 6px;
+    margin-top: 3px;
+    margin-left: 3px;
+    background-image: url(/media/pixel-emoji.webp) !important;
+    opacity: 0.5;
+}
+#is_typing {
+    filter: drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF) drop-shadow(0 0 1px #FFF);
+    background-color: #FFF;
+    border: solid 1px #000;
+    border-color: var(--main-fg-color-light);
+    border-radius: 3px;
+    left: unset;
+    right: 10px;
+    bottom: 27px;
+    overflow: visible;
+}
+#is_typing:hover::after {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    content: "someone is typing";
+    font-size: 10pt;
+    position: fixed;
+    right: 35px;
+    bottom: 0;
+    width: 60vw;
+    color: #000;
+    z-index: 100000;
+}
+#is_typing > span {
+    background-color: var(--main-fg-color-light);
+    border-radius: 0;
+    height: 2px;
+    width: 2px;
+}
+
+#closeSettingsBtn {
+  background: #82644f;
+  color: #FFF;
+  font-family: 'pixelatedelegance';
+}
+
+#save {
+  border: 1px solid #7C431C;
+  border-radius: 3px;
+  background: white;
+  color: #996e59;
+  font-family: 'pixelatedelegance';
+}
