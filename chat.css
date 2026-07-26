@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'romanceA';
-  src: url("https://rainingroses.neocities.org/fonts/RomanceA.ttf");
+  src: url("https://file.garden/akgob9Kl3FKsBuly/RomanceA.ttf");
 }
 :root {
   --main-fg-color: #f7e9f0;
@@ -31,7 +31,7 @@ body {
 }
 
 #background, #settingsMenu {
-    background: url("https://fc.ashrose.net/sun/gif/0885.gif");
+    background: url("https://file.garden/akgob9Kl3FKsBuly/sony%20cybershot/0885.gif");
     background-repeat: repeat;
 }
 
